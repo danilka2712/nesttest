@@ -38,7 +38,7 @@ export class ChatService {
         id,
       },
       data: {
-        content: 'Выполено',
+        content: 'Выполнено',
         authorId: 1,
       },
     });
