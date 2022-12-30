@@ -31,6 +31,9 @@ export class ChatService {
       where: {
         id,
       },
+      include: {
+        author: true,
+      },
     });
   }
 
