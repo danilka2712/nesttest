@@ -46,6 +46,9 @@ export class ChatService {
         content: 'Выполнено',
         authorId: 1,
       },
+      include: {
+        author: true,
+      },
     });
   }
 }
