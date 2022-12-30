@@ -12,6 +12,8 @@ export class ChatService {
         phone: createChatDto.phone,
         marka: createChatDto.marka,
         model: createChatDto.model,
+        addressTo: createChatDto.addressTo,
+        addressWhere: createChatDto.addressWhere,
       },
     });
   }

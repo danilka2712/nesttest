@@ -19,12 +19,14 @@ model User {
 }
 
 model Product {
-  id        Int      @id @unique @default(autoincrement())
-  createdAt DateTime @default(now())
-  phone     String
-  marka     String?
-  model     String?
-  content   String?  @default("Поиск заказчика")
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  id           Int      @id @unique @default(autoincrement())
+  createdAt    DateTime @default(now())
+  phone        String
+  marka        String?
+  model        String?
+  addressTo    String?
+  addressWhere String?
+  content      String?  @default("Поиск заказчика")
+  author       User?    @relation(fields: [authorId], references: [id])
+  authorId     Int?
 }
