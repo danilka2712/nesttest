@@ -4,4 +4,5 @@ export class CreateUserDto {
   createdAt?: string | Date;
   email: string;
   name: string;
+  hash: string;
 }
