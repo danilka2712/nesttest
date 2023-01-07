@@ -1,13 +1,16 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
-import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
- async create(createUserDto: CreateUserDto) {
-    return await this.prisma.user.create({
-      data: createUserDto,
+  async create(id: number, prisma: Prisma.UserUpdateInput) {
+    return await this.prisma.user.update({
+      where: {
+        id: Number(id),
+      },
+      data: prisma,
     });
   }
 }

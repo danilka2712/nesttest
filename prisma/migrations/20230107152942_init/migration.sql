@@ -5,7 +5,8 @@ CREATE TABLE "User" (
     "updatedAt" DATETIME NOT NULL,
     "email" TEXT NOT NULL,
     "hash" TEXT NOT NULL,
-    "name" TEXT
+    "name" TEXT,
+    "phone" TEXT
 );
 
 -- CreateTable

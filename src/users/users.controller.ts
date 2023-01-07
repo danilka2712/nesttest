@@ -1,11 +1,19 @@
-import { Controller, Get, Post, Body, UseGuards, Req } from '@nestjs/common';
+import {
+  Controller,
+  Put,
+  Get,
+  Post,
+  Body,
+  UseGuards,
+  Req,
+  Param,
+} from '@nestjs/common';
+import { Prisma } from '@prisma/client';
+
 import { UsersService } from './users.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { AuthGuard } from '@nestjs/passport';
-import { Request } from 'express';
 import { JwtGuard } from 'src/auth/guard/jwt.guard';
 import { getUser } from 'src/auth/decorators/user.decorator';
-import { User } from '@prisma/client';
+import { prisma, User } from '@prisma/client';
 
 @Controller('users')
 export class UsersController {
@@ -14,5 +22,13 @@ export class UsersController {
   @Get('me')
   getMe(@getUser() user: User) {
     return user;
+  }
+  @UseGuards(JwtGuard)
+  @Post(':id')
+  async create(
+    @Param('id') id: number,
+    @Body() prisma: Prisma.UserUpdateInput,
+  ) {
+    return await this.usersService.create(id, prisma);
   }
 }
