@@ -4,4 +4,5 @@ export class CreateChatDto {
   model: string;
   addressTo: string;
   addressWhere: string;
+  price: string
 }
