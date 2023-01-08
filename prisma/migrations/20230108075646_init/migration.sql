@@ -18,7 +18,7 @@ CREATE TABLE "Product" (
     "model" TEXT,
     "addressTo" TEXT,
     "addressWhere" TEXT,
-    "price" TEXT,
+    "price" TEXT DEFAULT '0',
     "content" TEXT DEFAULT 'Поиск заказчика',
     "authorId" INTEGER,
     CONSTRAINT "Product_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User" ("id") ON DELETE SET NULL ON UPDATE CASCADE

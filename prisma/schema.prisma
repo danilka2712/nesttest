@@ -29,7 +29,7 @@ model Product {
   model        String?
   addressTo    String?
   addressWhere String?
-  price        Int?     @default(0)
+  price        String?  @default("0")
   content      String?  @default("Поиск заказчика")
   author       User?    @relation(fields: [authorId], references: [id])
   authorId     Int?
