@@ -11,7 +11,7 @@ export class UsersService {
       where: {
         id: user.id,
       },
-      select: {
+      include: {
         Product: true,
       },
     });
