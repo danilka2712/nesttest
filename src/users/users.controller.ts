@@ -20,8 +20,8 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
   @UseGuards(JwtGuard)
   @Get('me')
-  getMe(@getUser() user: User) {
-    return user;
+  async getMe(@getUser() user: User) {
+    return await this.usersService.findMe(user);
   }
   @UseGuards(JwtGuard)
   @Post(':id')

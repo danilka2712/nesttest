@@ -40,7 +40,7 @@ export class ChatGateway {
 
   @SubscribeMessage('updateChat')
   async update(@MessageBody() updateChatDto: UpdateChatDto) {
-    const update = await this.chatService.update(updateChatDto.id);
+    const update = await this.chatService.update(updateChatDto.id, updateChatDto.authorId);
     this.server.emit('update', update);
     return update;
   }

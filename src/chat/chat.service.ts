@@ -15,7 +15,6 @@ export class ChatService {
         addressTo: createChatDto.addressTo,
         addressWhere: createChatDto.addressWhere,
         price: createChatDto.price,
-
       },
     });
   }
@@ -39,14 +38,14 @@ export class ChatService {
     });
   }
 
-  async update(id: number) {
+  async update(id: number, authorId: number) {
     return await this.prisma.product.update({
       where: {
         id,
       },
       data: {
         content: 'Выполнено',
-        authorId: 1,
+        authorId,
       },
       include: {
         author: true,
