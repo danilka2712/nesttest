@@ -15,6 +15,7 @@ export class ChatService {
         addressTo: createChatDto.addressTo,
         addressWhere: createChatDto.addressWhere,
         price: createChatDto.price,
+        services: createChatDto.services,
       },
     });
   }
