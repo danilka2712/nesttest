@@ -5,5 +5,5 @@ export class CreateChatDto {
   addressTo: string;
   addressWhere: string;
   price: string;
-  services: string;
+  services: string
 }
