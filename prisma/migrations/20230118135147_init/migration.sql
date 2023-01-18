@@ -18,6 +18,7 @@ CREATE TABLE "Product" (
     "model" TEXT,
     "addressTo" TEXT,
     "addressWhere" TEXT,
+    "services" TEXT,
     "price" TEXT DEFAULT '0',
     "content" TEXT DEFAULT 'Поиск заказчика',
     "authorId" INTEGER,
