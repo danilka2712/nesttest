@@ -40,13 +40,13 @@ export class ChatService {
     });
   }
 
-  async update(id: number, authorId: number) {
+  async update(id: number, authorId: number, content: string) {
     return await this.prisma.product.update({
       where: {
         id,
       },
       data: {
-        content: 'Выполнено',
+        content,
         authorId,
       },
       include: {
